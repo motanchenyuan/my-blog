@@ -28,8 +28,7 @@ class Tag(models.Model):
 		return self.name
 class Post(models.Model):
 	title = models.CharField(max_length=70)
-	def __str__(self):                 
-		return self.name
+	
 	body = models.TextField()
 	create_time = models.DateTimeField()
 	modeified_time = models.DateTimeField()
@@ -37,4 +36,7 @@ class Post(models.Model):
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	tags = models.ManyToManyField(Tag,blank=True)
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
+	def __str__(self):                 
+		return self.name
+	
 	
