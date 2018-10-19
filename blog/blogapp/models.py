@@ -41,9 +41,7 @@ class Post(models.Model):
 	def __str__(self):                 
 		return self.title
 @python_2_unicode_compatible
-
-    	def __str__(self):
-        	return self.title
+e
 
     # 自定义 get_absolute_url 方法
     # 记得从 django.urls 中导入 reverse 函数
