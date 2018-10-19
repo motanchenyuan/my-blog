@@ -20,7 +20,6 @@ from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
-urlpatterns = [  
+
     url(r'',include('blogapp.urls')),
    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
