@@ -39,15 +39,16 @@ class Post(models.Model):
 	tags = models.ManyToManyField(Tag,blank=True)
 	author = models.ForeignKey(User, on_delete=models.CASCADE)
 	def __str__(self):                 
-		return self.title@python_2_unicode_compatible
+		return self.title
+@python_2_unicode_compatible
 
-    def __str__(self):
-        return self.title
+    	def __str__(self):
+        	return self.title
 
     # 自定义 get_absolute_url 方法
     # 记得从 django.urls 中导入 reverse 函数
-    def get_absolute_url(self):
-        return reverse('blog:detail', kwargs={'pk': self.pk})
+    	def get_absolute_url(self):
+        	return reverse('blog:detail', kwargs={'pk': self.pk})
 
 	
 	
