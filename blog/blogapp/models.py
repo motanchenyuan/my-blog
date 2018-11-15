@@ -50,8 +50,8 @@ class Post(models.Model):
         	return reverse('blogapp:detail', kwargs={'pk': self.pk})
 	#定义阅读次数累计方法
 	def increase_views(self):
-        self.views += 1
-        self.save(update_fields=['views'])
+        	self.views += 1
+        	self.save(update_fields=['views'])
 
 
     # 自定义 get_absolute_url 方法
