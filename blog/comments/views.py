@@ -1,8 +1,4 @@
-																						                           'form': form,
-																																									                          'comment_list': comment_list
-																																												                         }
-																																															             return render(request, 'blog/detail.html', context=context)
-			from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from blog.models import Post
 
 from .models import Comment
@@ -55,5 +51,4 @@ def post_comment(request, post_pk):
                        }
             return render(request, 'blog/detail.html', context=context)
     # 不是 post 请求，说明用户没有提交数据，重定向到文章详情页。
-    return redirect(post)																																													         # 涓嶆槸 post 璇锋眰锛岃鏄庣敤鎴锋病鏈夋彁浜ゆ暟鎹紝閲嶅畾鍚戝埌鏂囩珷璇︽儏椤点��
-																																																	     return redirect(post)
+    return redirect(post)
