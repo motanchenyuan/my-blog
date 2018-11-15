@@ -37,7 +37,7 @@ def detail(request, pk):
                'comment_list': comment_list
                }
     
-    return render(request, 'blog/detail.html',context={'context':contsxt})
+    return render(request, 'blog/detail.html')
 def archives(request,year,month):
     post_list = Post.objects.filter(create_time__year=year,
 				    create_time__month=month,
