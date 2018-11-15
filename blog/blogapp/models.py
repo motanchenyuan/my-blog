@@ -36,7 +36,7 @@ class Tag(models.Model):
 @python_2_unicode_compatible
 class Post(models.Model):
 	title = models.CharField(max_length=70)
-	
+	views = models.PositiveIntegerField(default=0) #定义阅读次数
 	body = models.TextField()
 	create_time = models.DateTimeField()
 	modeified_time = models.DateTimeField()
@@ -48,6 +48,10 @@ class Post(models.Model):
 		return self.title
 	def get_absolute_url(self):
         	return reverse('blogapp:detail', kwargs={'pk': self.pk})
+	#定义阅读次数累计方法
+	def increase_views(self):
+        self.views += 1
+        self.save(update_fields=['views'])
 
 
     # 自定义 get_absolute_url 方法
