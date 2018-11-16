@@ -98,7 +98,7 @@ def register(request):
             auth.login(request,userlogin)
             return HttpResponseRedirect('/blog')
 
-    return render(request,'blogapp/register.html', {'errors': errors})
+    return render(request,'blog/register.html', {'errors': errors})
 
 
 # 用户登录
@@ -128,7 +128,7 @@ def my_login(request):
                     errors.append('用户名错误')
             else:
                 errors.append('用户名或密码错误')
-    return render(request,'blogapp/login.html', {'errors': errors})
+    return render(request,'blog/login.html', {'errors': errors})
 
 # 用户退出
 def my_logout(request):
