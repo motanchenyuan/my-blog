@@ -54,6 +54,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'blog.urls'
 
+#增加一项内容实现UserInfo表继承Django用户认证的表
+AUTH_USER_MODEL="blog.UserInfo"
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
