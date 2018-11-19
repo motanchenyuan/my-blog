@@ -1,64 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>注册</title>
+    <link rel="stylesheet" href="https://unpkg.com/mobi.css/dist/mobi.min.css">
+    <style>
+        .errorlist {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-
-{% if errors %}
-        <li>
-
-            {% for error in errors %}
-             <p style="color: red;">
-                {{error}}
-             </p>
-              {% endfor %}
-        </li>
-    {% endif %}
-<table>
-    <form action="" method="post">{% csrf_token %}
-
-        <tr>
-            <td>
-                <label >用户名:</label>
-            </td>
-            <td>
-                <input type = 'text' placeholder="输入用户名" name = 'account'>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label >密码:</label>
-            </td>
-            <td>
-              <input type = 'password' placeholder="输入密码" name = 'password'>
-            </td>
-        </tr>
-         <tr>
-             <td>
-                <label >确认密码:</label>
-             </td>
-             <td>
-                 <input type = 'password' placeholder="再次输入密码" name ='password2'>
-             </td>
-
-         </tr>
-         <tr>
-             <td>
-                 <label>邮箱:</label>
-             </td>
-             <td>
-                 <input type="email" placeholder="输入邮箱" name = 'email'>
-             </td>
-         </tr>
-          <tr>
-
-              <td>
-                   <input type = 'submit' placeholder="Login" value="登录">
-              </td>
-          </tr>
-    </form>
-</table>
+<div class="flex-center">
+    <div class="container">
+        <div class="flex-center">
+            <div class="unit-1-2 unit-1-on-mobile">
+                <h3>注册</h3>
+                <form class="form" action="{% url 'users:register' %}" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }}
+                        {% if field.help_text %}
+                            <p class="help text-small text-muted">{{ field.help_text|safe }}</p>
+                        {% endif %}
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary btn-block">注册</button>
+                </form>
+                <div class="flex-center top-gap text-small">
+                    <a href="login.html">已有账号登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+为了使注册页面更加美观，我引入了 mobi.css 提供样式支持。其它的代码请忽略，重点只关注表单部分：
+
+<form class="form" action="{% url 'users:register' %}" method="post">
+  {% csrf_token %}
+  {% for field in form %}
+    {{ field.label_tag }}
+    {{ field }}
+    {{ field.errors }}
+    {% if field.help_text %}
+        <p class="help text-small text-muted">{{ field.help_text|safe }}</p>
+    {% endif %}
+  {% endfor %}
+  <button type="submit" class="btn btn-primary btn-block">注册</button>
+</form>
