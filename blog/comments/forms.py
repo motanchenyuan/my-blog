@@ -2,7 +2,7 @@ from django import forms
 from .models import Comment
 #以下为用户注册导入
 from django.contrib.auth.forms import UserCreationForm
-from .models import User
+from blogapp.models import User
 
 class CommentForm(forms.ModelForm):
 	class Meta:
