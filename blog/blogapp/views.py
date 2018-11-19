@@ -3,7 +3,7 @@ from django.shortcuts import render
 from comments.forms import CommentForm
 #注册登录
 from django.shortcuts import render, redirect
-from .forms import RegisterForm
+from comments.forms import RegisterForm
 
 # Create your views here.
 from django.http import HttpResponse
