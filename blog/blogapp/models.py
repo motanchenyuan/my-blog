@@ -19,9 +19,9 @@ class UserInfo(AbstractUser):
     def __str__(self):
         return self.username
 class Blog(models.Model):
-    
+    '''
     博客(个人站点)信息
-    
+    '''
     nid = models.AutoField(primary_key=True)
     title = models.CharField(verbose_name='个人博客标题', max_length=64)
     site = models.CharField(verbose_name='个人博客后缀', max_length=32, unique=True)
