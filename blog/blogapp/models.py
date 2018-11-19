@@ -80,6 +80,12 @@ class Post(models.Model):
 
     # 自定义 get_absolute_url 方法
     # 记得从 django.urls 中导入 reverse 函数
+	
+class User(AbstractUser):
+    nickname = models.CharField(max_length=50, blank=True)
+
+    class Meta(AbstractUser.Meta):
+        pass
     	
 
 	
