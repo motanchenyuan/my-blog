@@ -2,9 +2,8 @@ import markdown
 from django.shortcuts import render
 from comments.forms import CommentForm
 #注册登录
-from django.contrib import auth
-from django.contrib.auth.models import User
-from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render, redirect
+from .forms import RegisterForm
 
 # Create your views here.
 from django.http import HttpResponse
@@ -56,82 +55,26 @@ def category(request, pk):
     return render(request, 'blog/index.html', context={'post_list': post_list })
 
 #以下为用户登录模块
-@csrf_exempt
 def register(request):
-    errors = []
-    account = None
-    password = None
-    password2 = None
-    email = None
-    CompareFlag = False
-
+    # 只有当请求为 POST 时，才表示用户提交了注册信息
     if request.method == 'POST':
-        if not request.POST.get('account'):
-            errors.append('用户名不能为空')
-        else:
-            account = request.POST.get('account')
+        # request.POST 是一个类字典数据结构，记录了用户提交的注册信息
+        # 这里提交的就是用户名（username）、密码（password）、邮箱（email）
+        # 用这些数据实例化一个用户注册表单
+        form = RegisterForm(request.POST)
 
-        if not request.POST.get('password'):
-            errors.append('密码不能为空')
-        else:
-            password = request.POST.get('password')
-        if not request.POST.get('password2'):
-            errors.append('确认密码不能为空')
-        else:
-            password2 = request.POST.get('password2')
-        if not request.POST.get('email'):
-            errors.append('邮箱不能为空')
-        else:
-            email = request.POST.get('email')
+        # 验证数据的合法性
+        if form.is_valid():
+            # 如果提交数据合法，调用表单的 save 方法将用户数据保存到数据库
+            form.save()
 
-        if password is not None:
-            if password == password2:
-                CompareFlag = True
-            else:
-                errors.append('两次输入密码不一致')
+            # 注册成功，跳转回首页
+            return redirect('/')
+    else:
+        # 请求不是 POST，表明用户正在访问注册页面，展示一个空的注册表单给用户
+        form = RegisterForm()
 
-        if account is not None and password is not None and password2 is not None and email is not None and CompareFlag :
-            user = User.objects.create_user(account,email,password)
-            user.save()
-
-            userlogin = auth.authenticate(username = account,password = password)
-            auth.login(request,userlogin)
-            return HttpResponseRedirect('/blog')
-
-    return render(request,'blog/register.html', {'errors': errors})
-
-
-# 用户登录
-@csrf_exempt
-def my_login(request):
-    errors =[]
-    account = None
-    password = None
-    if request.method == "POST":
-        if not request.POST.get('account'):
-            errors.append('用户名不能为空')
-        else:
-            account = request.POST.get('account')
-
-        if not request.POST.get('password'):
-            errors = request.POST.get('密码不能为空')
-        else:
-            password = request.POST.get('password')
-
-        if account is not None and password is not None:
-            user = auth.authenticate(username=account,password=password)
-            if user is not None:
-                if user.is_active:
-                    auth.login(request,user)
-                    return HttpResponseRedirect('/blog')
-                else:
-                    errors.append('用户名错误')
-            else:
-                errors.append('用户名或密码错误')
-    return render(request,'blog/login.html', {'errors': errors})
-
-# 用户退出
-def my_logout(request):
-    auth.logout(request)
-    return HttpResponseRedirect('/blog')
-
+    # 渲染模板
+    # 如果用户正在访问注册页面，则渲染的是一个空的注册表单
+    # 如果用户通过表单提交注册信息，但是数据验证不合法，则渲染的是一个带有错误信息的表单
+    return render(request, 'users/register.html', context={'form': form})
