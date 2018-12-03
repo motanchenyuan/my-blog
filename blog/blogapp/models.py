@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.six import python_2_unicode_compatible
 #from django.contrib.auth.models import AbstractUser
-
+'''
 
 class UserInfo(AbstractUser):
     """
@@ -18,6 +18,8 @@ class UserInfo(AbstractUser):
     blog = models.OneToOneField(to='Blog', to_field='nid', null=True, on_delete=models.CASCADE)
     def __str__(self):
         return self.username
+	
+'''
 class Blog(models.Model):
     '''
     博客(个人站点)信息
