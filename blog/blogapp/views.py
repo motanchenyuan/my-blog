@@ -53,7 +53,7 @@ def category(request, pk):
     cate = get_object_or_404(Category, pk=pk)
     post_list = Post.objects.filter(category=cate).order_by('-create_time')
     return render(request, 'blog/index.html', context={'post_list': post_list })
-
+'''
 #以下为用户登录模块
 def register(request):
     # 只有当请求为 POST 时，才表示用户提交了注册信息
@@ -78,3 +78,4 @@ def register(request):
     # 如果用户正在访问注册页面，则渲染的是一个空的注册表单
     # 如果用户通过表单提交注册信息，但是数据验证不合法，则渲染的是一个带有错误信息的表单
     return render(request, 'register.html', context={'form': form})
+    '''
