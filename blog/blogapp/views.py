@@ -2,8 +2,8 @@ import markdown
 from django.shortcuts import render
 from comments.forms import CommentForm
 #注册登录
-from django.shortcuts import render, redirect
-from comments.forms import RegisterForm
+#from django.shortcuts import render, redirect
+#from comments.forms import RegisterForm
 
 # Create your views here.
 from django.http import HttpResponse
