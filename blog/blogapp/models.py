@@ -1,7 +1,7 @@
 # encoding:utf8
 from django.db import models
 from django.contrib import admin
-from users.models import User
+from users.models import nikname
 from django.urls import reverse
 from django.utils.six import python_2_unicode_compatible
 #from django.contrib.auth.models import AbstractUser
@@ -69,7 +69,7 @@ class Post(models.Model):
 	excerpt = models.CharField(max_length= 200,blank = True)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	tags = models.ManyToManyField(Tag,blank=True)
-	author = models.ForeignKey(User, on_delete=models.CASCADE)
+	author = models.ForeignKey(nikname, on_delete=models.CASCADE)
 	def __str__(self):                 
 		return self.title
 	def get_absolute_url(self):
