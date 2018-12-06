@@ -1,8 +1,10 @@
 from django import forms
 from .models import Comment
 #以下为用户注册导入
+
 from django.contrib.auth.forms import UserCreationForm
-from blogapp.models import User
+#from blogapp.models import User
+from django.conf import settings
 
 class CommentForm(forms.ModelForm):
 	class Meta:
@@ -11,5 +13,5 @@ class CommentForm(forms.ModelForm):
 #注册部分代码
 class RegisterForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
-        model = User
+        model = settings.AUTH_USER_MODEL
         fields = ("username", "email")
