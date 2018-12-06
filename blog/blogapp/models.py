@@ -1,7 +1,9 @@
 # encoding:utf8
 from django.db import models
+from django.conf import settings #setting 中User
+
 from django.contrib import admin
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.six import python_2_unicode_compatible
 #from django.contrib.auth.models import AbstractUser
