@@ -17,6 +17,7 @@
     <div class="container">
         <div class="flex-center">
             <div class="unit-1-2 unit-1-on-mobile">
+                <h1><a href="{% url 'index' %}">Django Auth Example</a></h1>
                 <h3>注册</h3>
                 <form class="form" action="{% url 'users:register' %}" method="post">
                     {% csrf_token %}
@@ -29,9 +30,10 @@
                         {% endif %}
                     {% endfor %}
                     <button type="submit" class="btn btn-primary btn-block">注册</button>
+                    <input type="hidden" name="next" value="{{ next }}"/>
                 </form>
                 <div class="flex-center top-gap text-small">
-                    <a href="login.html">已有账号登录</a>
+                    <a href="{% url 'login' %}">已有账号登录</a>
                 </div>
             </div>
         </div>
@@ -39,17 +41,3 @@
 </div>
 </body>
 </html>
-为了使注册页面更加美观，我引入了 mobi.css 提供样式支持。其它的代码请忽略，重点只关注表单部分：
-
-<form class="form" action="{% url 'users:register' %}" method="post">
-  {% csrf_token %}
-  {% for field in form %}
-    {{ field.label_tag }}
-    {{ field }}
-    {{ field.errors }}
-    {% if field.help_text %}
-        <p class="help text-small text-muted">{{ field.help_text|safe }}</p>
-    {% endif %}
-  {% endfor %}
-  <button type="submit" class="btn btn-primary btn-block">注册</button>
-</form>
