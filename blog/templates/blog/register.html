@@ -17,7 +17,7 @@
     <div class="container">
         <div class="flex-center">
             <div class="unit-1-2 unit-1-on-mobile">
-                <h1><a href="{% url 'index' %}">Django Auth Example</a></h1>
+                <h1><a href="{% blog.url 'index' %}">Django Auth Example</a></h1>
                 <h3>注册</h3>
                 <form class="form" action="{% url 'users:register' %}" method="post">
                     {% csrf_token %}
@@ -33,7 +33,7 @@
                     <input type="hidden" name="next" value="{{ next }}"/>
                 </form>
                 <div class="flex-center top-gap text-small">
-                    <a href="{% url 'login' %}">已有账号登录</a>
+                    <a href="{% blog.url 'login' %}">已有账号登录</a>
                 </div>
             </div>
         </div>
