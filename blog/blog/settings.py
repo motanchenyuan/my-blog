@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['192.227.166.152','127.0.0.1','0.0.0.0','mtcy.site:8081']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+#    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -56,7 +56,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'blog.urls'
 
 #增加一项内容实现UserInfo表继承Django用户认证的表
-AUTH_USER_MODEL= 'users.User'
+
+AUTH_USER_MODEL = 'users.User'
 
 
 TEMPLATES = [
