@@ -18,11 +18,14 @@ from django.urls import path
 from django.conf.urls import url,include
 from django.conf.urls.static import static
 from django.conf import settings
+from users import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     url(r'',include('blogapp.urls')),
     url(r'^users/', include('users.urls')),
+    url(r'^users/', include('django.contrib.auth.urls')),
     
     url(r'', include('comments.urls')),
    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
