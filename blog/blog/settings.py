@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['192.227.166.152','127.0.0.1','0.0.0.0','mtcy.site:8081']
 
+LOGIN_REDIRECT_URL = ‘/index’
 
 # Application definition
 
