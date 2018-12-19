@@ -53,6 +53,9 @@ def category(request, pk):
     cate = get_object_or_404(Category, pk=pk)
     post_list = Post.objects.filter(category=cate).order_by('-create_time')
     return render(request, 'blog/index.html', context={'post_list': post_list })
+def tag(request,pk):
+    tags=Post.objects.tags.all()
+    return render(request, 'blog/index.html',context={'tags':tags}
 '''
 #以下为用户登录模块
 def register(request):
