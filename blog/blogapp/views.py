@@ -55,7 +55,7 @@ def category(request, pk):
     return render(request, 'blog/index.html', context={'post_list': post_list })
 def tag(request,pk):
     tags=Post.objects.tags.all()
-    return render(request, 'blog/index.html',context={'tags':tags}
+    return render(request, 'blog/index.html',context={'tags':tags})
 '''
 #以下为用户登录模块
 def register(request):
