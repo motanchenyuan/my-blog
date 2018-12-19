@@ -1,4 +1,4 @@
-from ..models import Post,Category
+from ..models import Post,Category,Tag
 from django import template
 register = template.Library()
 @register.simple_tag
