@@ -11,4 +11,7 @@ def archives():
 def get_categories():
     # 别忘了在顶部引入 Category 类
     return Category.objects.all()
+@register.simple_tag
+def get_tags():
+    return Tag.objects.all()
 
