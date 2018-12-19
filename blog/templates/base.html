@@ -124,9 +124,9 @@
                     <h3 class="widget-title">标签云</h3>
 			{% get_tags as tags_list %}
                     <ul>
-                       {% for tag in tags_list %}
+                       {% for tags in tags_list %}
 			    <li>
-				    <a herf = "{% url 'blogapp:tag' tag.pk %}">{{tag.name}}<span class="post-count"></span></a>              
+				    <a herf = "{% url 'blogapp:tags' tags.pk %}">{{tags.name}}<span class="post-count"></span></a>              
 				</li>	
 			    {% empty %}
 			暂无标签！
