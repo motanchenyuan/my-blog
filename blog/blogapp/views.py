@@ -10,6 +10,18 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Post,Category
 from django.shortcuts import render, get_object_or_404
+#设置分页
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+#以下为分页
+class IndexView(ListView):
+    model = Post
+    template_name = 'blogapp/index.html'
+    context_object_name = 'post_list'
+    # 指定 paginate_by 属性后开启分页功能，其值代表每一页包含多少篇文章
+    paginate_by = 10
+
+
+
 '''from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns += staticfiles_urlpatterns()
@@ -56,6 +68,10 @@ def category(request, pk):
 def tag(request,pk):
     tags=Post.objects.tags.all()
     return render(request, 'blog/index.html',context={'tags':tags})
+
+
+
+
 '''
 #以下为用户登录模块
 def register(request):
