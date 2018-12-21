@@ -20,7 +20,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class IndexView(ListView):
     model = Post
-    template_name = 'blogapp/index.html'
+    template_name = 'blog/index.html'
     context_object_name = 'post_list'
     # 指定 paginate_by 属性后开启分页功能，其值代表每一页包含多少篇文章
     paginate_by = 10
