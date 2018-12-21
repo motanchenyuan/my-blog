@@ -27,17 +27,18 @@
     {% empty %}
         <div class="no-post">暂时还没有发布的文章！</div>
     {% endfor %}
+
 {% if is_paginated %}
 <div class="pagination">
   {% if first %}
-    <a href="?page=1">1</a>
+    <a href="?page=1" style="text-align:center;">1</a>
   {% endif %}
   {% if left %}
     {% if left_has_more %}
-        <span>...</span>
+        <span style="text-align:center;">...</span>
     {% endif %}
     {% for i in left %}
-        <a href="?page={{ i }}">{{ i }}</a>
+        <a href="?page={{ i }}" style="text-align:center;">{{ i }}</a>
     {% endfor %}
   {% endif %}
   <a href="?page={{ page_obj.number }}" style="color: red">{{ page_obj.number }}</a>
