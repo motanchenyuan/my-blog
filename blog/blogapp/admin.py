@@ -5,5 +5,7 @@ class PostAdmin(admin.ModelAdmin):
 admin.site.register(Post)
 admin.site.register(Category)
 admin.site.register(Tag)
+admin.site.site_header = "言念 blog 后台登陆"
+admin.site.site_titler = "言念"
 # Register your models here.
 
