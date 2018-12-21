@@ -27,7 +27,7 @@
     {% empty %}
         <div class="no-post">暂时还没有发布的文章！</div>
     {% endfor %}
-
+<p style="text-align:center;">
 {% if is_paginated %}
 <div class="pagination">
   {% if first %}
@@ -55,6 +55,6 @@
   {% endif %}
 </div>
 {% endif %}
-
+</p>
 
 {% endblock main %}
