@@ -25,5 +25,3 @@ def register(request):
     # 如果用户通过表单提交注册信息，但是数据验证不合法，则渲染的是一个带有错误信息的表单
     return render(request, 'blog/register.html', context={'form': form})
 
-def index(request):
-    return render(request, 'index.html')
