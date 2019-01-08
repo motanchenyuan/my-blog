@@ -59,12 +59,12 @@
                             <li class="btn-group" role="group" aria-label="..."><a href="full-width.html" data-hover="博客">博客</a></li>
                             <li class="btn-group" role="group" aria-label="..."><a href="about.html" data-hover="关于">关于</a></li>
 			   <li class="btn-group" role="group" aria-label="...">   {% if user.is_authenticated %}
-                <p>欢迎你：<a href="#">{{ user.username }}</a></p>
+                <a href="#">欢迎你：{{ user.username }}</a>
             {% else %}
-                <p>
-                    <button ><a href="{% url 'login' %}">登录</a></button>
-                    <button><a href="{% url 'users:register' %}">注册</a></button>
-                </p>
+              
+                    <button  type="button" class="btn btn-default navbar-btn" ><a href="{% url 'login' %}">登录</a></button>
+                    <button  type="button" class="btn btn-default navbar-btn" ><a href="{% url 'users:register' %}">注册</a></button>
+                
             {% endif %}</li>
                   
                   </ul> 
