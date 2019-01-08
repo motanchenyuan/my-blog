@@ -45,16 +45,16 @@
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
-                <nav class="main-nav" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" id="trigger-overlay" class="navbar-toggle">
-                            <span class="ion-navicon"></span>
+		    
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only></span>
                         </button>
                     </div>
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-left"> 
-			  <!-- <ul class="breadcrumb">-->
+      			<ul class="nav navbar-nav">
                             <li class="btn-group" role="group" aria-label="..."><a href="{% url 'blogapp:index' %}" data-hover="首页">首页</a></li>
                             <li class="btn-group" role="group" aria-label="..."><a href="full-width.html" data-hover="博客">博客</a></li>
                             <li class="btn-group" role="group" aria-label="..."><a href="about.html" data-hover="关于">关于</a></li>
@@ -68,7 +68,7 @@
             {% endif %}</li>
                   
                   </ul> 
-                    </div><!-- /.navbar-collapse -->
+                    </div>
                 </nav>
                 <div id="header-search-box">
                     <a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
