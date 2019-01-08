@@ -50,19 +50,19 @@
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                 <h1 ><a href="{% url 'blogapp:index' %}"> <b>  <font color = "grey" size = 6 > 知其白，守其黑。</font></b></a></h1><br>
+                 <h1 ><a href="{% url 'blogapp:index' %}"> <b>  <font color = "grey" size = 4 > 知其白，守其黑。</font></b></a></h1><br>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
 		    
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
-                        <button>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                             <span class="sr-only></span>
                         </button>
                     </div>
 
-                    <div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       			<ul class="nav navbar-nav navbar-right">
                             <li ><a href="{% url 'blogapp:index' %}" data-hover="首页">首页</a></li>
                             <li ><a href="full-width.html" data-hover="博客">博客</a></li>
