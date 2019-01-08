@@ -55,19 +55,18 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-left"> 
 			  <!-- <ul class="breadcrumb">-->
-                            <li ><a href="{% url 'blogapp:index' %}" data-hover="首页">首页</a></li>
-                            <li><a href="full-width.html" data-hover="博客">博客</a></li>
-                            <li ><a href="about.html" data-hover="关于">关于</a></li>
-                            <li ><a href="{% url 'users:register' %}" data-hover="注册">注册</a></li>
-			   <li>   {% if user.is_authenticated %}
-                <p>你已登录，欢迎你：<a href="#">{{ user.username }}</a></p>
+                            <li class="btn-group" role="group" aria-label="..."><a href="{% url 'blogapp:index' %}" data-hover="首页">首页</a></li>
+                            <li class="btn-group" role="group" aria-label="..."><a href="full-width.html" data-hover="博客">博客</a></li>
+                            <li class="btn-group" role="group" aria-label="..."><a href="about.html" data-hover="关于">关于</a></li>
+			   <li class="btn-group" role="group" aria-label="...">   {% if user.is_authenticated %}
+                <p>欢迎你：<a href="#">{{ user.username }}</a></p>
             {% else %}
-                <p>你还没有登录，请
+                <p>
                     <button ><a href="{% url 'login' %}">登录</a></button>
-                    或者
                     <button><a href="{% url 'users:register' %}">注册</a></button>
                 </p>
             {% endif %}</li>
+                  
                   </ul> 
                     </div><!-- /.navbar-collapse -->
                 </nav>
