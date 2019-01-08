@@ -71,7 +71,8 @@
                             <input type="search" placeholder="搜索" required>
                             <button type="submit"><span class="ion-ios-search-strong"></span></button>
                         </form>
-										    
+				
+	    		<div>				    
 				<h>   {% if user.is_authenticated %}
                 <a href="#">欢迎你：{{ user.username }}</a>
             {% else %}
@@ -80,11 +81,11 @@
                     <button  type="button" class="btn btn-default navbar-btn" ><a href="{% url 'users:register' %}">注册</a></button>
                 
             {% endif %}</h>                   
-	    
+														   </div>    
 
-	    
     </header>
 </div>
+										     
 <div class="copyrights">Collect from <a>言念</a></div>
 <div class="copyrights">Modified by <a>言念</a></div>
 
