@@ -55,10 +55,12 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       			<ul class="nav navbar-nav">
-                            <li class="btn-group" role="group" aria-label="..."><a href="{% url 'blogapp:index' %}" data-hover="首页">首页</a></li>
-                            <li class="btn-group" role="group" aria-label="..."><a href="full-width.html" data-hover="博客">博客</a></li>
-                            <li class="btn-group" role="group" aria-label="..."><a href="about.html" data-hover="关于">关于</a></li>
-			   <li class="btn-group" role="group" aria-label="...">   {% if user.is_authenticated %}
+                            <li ><a href="{% url 'blogapp:index' %}" data-hover="首页">首页</a></li>
+                            <li><a href="full-width.html" data-hover="博客">博客</a></li>
+                            <li ><a href="about.html" data-hover="关于">关于</a></li>
+			   
+														    
+				<li>   {% if user.is_authenticated %}
                 <a href="#">欢迎你：{{ user.username }}</a>
             {% else %}
               
