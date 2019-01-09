@@ -173,6 +173,11 @@
 <br><br>
 <nav aria-label="...">	
 	<ul class="pager">
+       <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
 {% if is_paginated %}
 <!--<div class="pagination justify-content-center" style="text-align:center;font-size=5;">-->
   {% if first %}
@@ -209,6 +214,11 @@
 		{% endif %}
 <!--</div>-->
 {% endif %}
+		<li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
 		</ul>
 </nav>
 <br><br>
