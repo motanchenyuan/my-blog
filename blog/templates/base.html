@@ -202,7 +202,7 @@
 
 	
 	
-{% if is_paginated %}
+
 <nav aria-label="...">
   <ul class="pager">
     <li class="page-item">
@@ -211,7 +211,7 @@
         <span class="sr-only">Previous</span>
       </a>
     </li>
- 
+ {% if is_paginated %}
     <li class="page-item">
 	    {% if first %}<a class="page-link" href="?page=1">1</a> {% endif %}</li>
 
