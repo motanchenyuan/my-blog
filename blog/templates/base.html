@@ -247,7 +247,7 @@
 {% if right_has_more %}
         <span>...</span>
     {% endif %}
- 
+
 {% if last %}
     <li class="page-item">
       <a class="page-link" href="?page={{ paginator.num_pages }}" aria-label="Next">
@@ -256,6 +256,7 @@
         
       </a>
     </li>
+	   {% endif %}
 {% endif %}
   </ul>
 
