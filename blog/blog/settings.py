@@ -25,9 +25,9 @@ SECRET_KEY = '2)oof0l$43gc)ldsv8l6_j+68ydpz20nqfp)cwp6l#^m9(5zog'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.227.166.152','127.0.0.1','0.0.0.0','mtcy.site:8081']
+ALLOWED_HOSTS = ['192.227.166.152','127.0.0.1','0.0.0.0','mtcy.site:8081','192.168.204.132']
 
-LOGIN_REDIRECT_URL = ‘/index’
+LOGIN_REDIRECT_URL ='/index'
 
 # Application definition
 

@@ -7,8 +7,8 @@
 
     <!-- meta -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- move device -->
+<!--
     <!-- bootstrap css -->
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -18,13 +18,17 @@
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
+-->	
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/highlights/github.css' %}">
 	
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}">
+
+
 
      <link rel="stylesheet" href="https://unpkg.com/mobi.css/dist/mobi.min.css">
 	
@@ -40,6 +44,8 @@
     <script src="{% static 'blog/js/modernizr.custom.js' %}"></script>
 	
 	
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -92,9 +98,10 @@
 <div class="copyrights">Modified by <a>言念</a></div>
 
 <div class="content-body">
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div  class="row" >
             <main class="col-md-8">
+
                 {% block main %}
                 {% endblock main %}
             </main>
