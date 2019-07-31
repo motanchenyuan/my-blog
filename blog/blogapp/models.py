@@ -7,25 +7,10 @@ from django.contrib import admin
 from django.urls import reverse
 from django.utils.six import python_2_unicode_compatible
 #from django.contrib.auth.models import AbstractUser
-'''
 
-class UserInfo(AbstractUser):
-    """
-    用户信息
-    """
-    nid = models.AutoField(primary_key=True)
-    telephone = models.CharField(max_length=11, null=True, unique=True)
-    avatar = models.FileField(upload_to='avatars/', default="/avatars/default.png")
-    create1_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
-    blog = models.OneToOneField(to='Blog', to_field='nid', null=True, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.username
-	
-'''
 class Blog(models.Model):
-    '''
-    博客(个人站点)信息
-    '''
+ #博客(个人站点)信息
+
     nid = models.AutoField(primary_key=True)
     title = models.CharField(verbose_name='个人博客标题', max_length=64)
     site = models.CharField(verbose_name='个人博客后缀', max_length=32, unique=True)
@@ -33,21 +18,7 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
-'''class Article(models.Model):
-    title = models.CharField(max_length=100)    
-    category = models.TextField(max_length=50, blank=True)  
-    date_time = models.DateTimeField(auto_now_add=True) 
-    content = models.TextField(blank=True, null = True) 
 
-    def __unicode__(self):
-        return self.title
-
-    class Meta: 
-        ordering = ['-date_time']
-
-# Register model
-admin.site.register(Article)
-'''
 @python_2_unicode_compatible
 class Category(models.Model):
 	name = models.CharField(max_length=100)
@@ -81,15 +52,3 @@ class Post(models.Model):
         	self.views += 1
         	self.save(update_fields=['views'])
 
-'''
-    # 自定义 get_absolute_url 方法
-    # 记得从 django.urls 中导入 reverse 函数
-	
-class User(AbstractUser):
-    nickname = models.AutoField(primary_key=True)
-class Meta(AbstractUser.Meta):
-        pass
-'''    	
-
-	
-	
