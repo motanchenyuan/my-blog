@@ -21,7 +21,7 @@
         <hr>
         
         <h3 style="font-family:KaiTi;font-size:20px;">发表评论</h3>
-        <form action="{% url 'comments:post_comment' post.pk %}" method="post" class="comment-form">
+        <form action="{% url 'comments:post_comment' post.pk %}" method="post">
             {% csrf_token %}
             <div class="row">
                 <div class="col-md-4">
